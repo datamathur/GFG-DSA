@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cmath>
+#include <algorithm>
 using namespace std;
 
 //Method 1 - Naive Methods
@@ -22,6 +24,16 @@ bool isPow2(int n){
         return true;
     }
     return ((n & (n-1))==0);
+}
+
+bool isPowerof2(long long n){
+    if(n==0){
+        return false;
+    }
+    long long k = log2(n);
+    long long l = pow(2,k);
+    return l==n;
+    
 }
 
 int main(){
